@@ -1,0 +1,54 @@
+{
+  "testCases": [
+    {
+      "panelW": 1,
+      "panelH": 2,
+      "roofW": 2,
+      "roofH": 4,
+      "expected": 4
+    },
+    {
+      "panelW": 1,
+      "panelH": 2,
+      "roofW": 3,
+      "roofH": 5,
+      "expected": 7
+    },
+    {
+      "panelW": 2,
+      "panelH": 2,
+      "roofW": 1,
+      "roofH": 10,
+      "expected": 0
+    },
+    {
+      "panelW": 5,
+      "panelH": 3,
+      "roofW": 15,
+      "roofH": 16,
+      "expected": 15
+    },
+    {
+      "panelW": 1,
+      "panelH": 3,
+      "roofW": 3,
+      "roofH": 3,
+      "expected": 3
+    },
+    {
+      "panelW": 3,
+      "panelH": 1,
+      "roofW": 8,
+      "roofH": 6,
+      "expected": 16
+    },
+    {
+      "panelW": 2,
+      "panelH": 3,
+      "roofW": 7,
+      "roofH": 8,
+      "expected": 8
+    }
+  ]
+}
+
