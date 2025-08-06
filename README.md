@@ -10,16 +10,8 @@ El problema a resolver consiste en encontrar la máxima cantidad de rectángulos
 
 ## 🚀 Cómo Empezar
 
-### Opción 1: Solución en TypeScript
 ```bash
-cd typescript
-npm install
-npm start
-```
-
-### Opción 2: Solución en Python
-```bash
-cd python
+cd ruuf_challenge
 python3 main.py
 ```
 
@@ -35,6 +27,23 @@ Tu solución debe pasar los siguientes casos de prueba:
 ## 📝 Tu Solución
 
 Explica acá
+#### Lógica del algoritmo
+
+La solución implementada es un algoritmo heurístico basado en la partición recursiva del espacio, este método sigue una estrategia "greedy" que busca maximizar el empaquetado en cada paso.
+
+El proceso está implementado en la función `calculate_panels` y se puede desglosar de la siguiente manera:
+
+1. Considerar Ambas Orientaciones: El algoritmo evalúa dos escenarios principales de forma independiente:
+
+    Escenario A: Colocar los paneles en su orientación original (vertical).
+
+    Escenario B: Colocar los paneles rotados 90 grados (horizontal).
+
+2. Llenado Inicial: En cada escenario, el algoritmo primero llena el área del techo con la mayor cantidad posible de paneles en la orientación correspondiente.
+
+3. Partición del Espacio Sobrante: Una vez colocada la cuadrícula principal, se llama nuevamente la función `calculate_panels` para así comprobar cuantos paneles caben en los dos rectángulos que se pueden formar con el espacio sobrante.
+
+4. Resultado Final: El número total de paneles para el Escenario A es la suma de los paneles de la cuadrícula inicial más los obtenidos en las llamadas recursivas. Se realiza el mismo cálculo para el Escenario B. El resultado final de la función es el valor máximo entre el total del Escenario A y el total del Escenario B.
 
 ---
 
@@ -58,5 +67,4 @@ Si completaste alguno de los ejercicios bonus, explica tu solución aquí:
 
 ## 🤔 Supuestos y Decisiones
 
-*[Si tuviste que tomar algún supuesto o decisión de diseño, explícalo aquí]*
-
+Una decisión que considero importante, es la de limitar la rotación de los rectángulos pequeños a solo 90°. A pesar de que se puede modificar la formula para considerar casos donde utilizando diagonales se pueden empaquetar rectángulos pequeños que aparentemente no caben en el contenedor, decidí no tomar en cuenta estos, ya que no me hacen sentido teniendo en cuenta el el contexto real al que se aplicaría esta solución(la instalación de paneles solares).
